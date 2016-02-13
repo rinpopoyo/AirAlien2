@@ -128,6 +128,38 @@
 			</div>
 		</div>
 
+    <br>
+    <hr>
+
+    <!-- Google Map -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <div id="map"></div>
+        <style>
+          #map {
+            width: 100%;
+            height: 400px;
+          }
+        </style>
+        <script>
+          function initMap() {
+            var mapDiv = document.getElementById('map');
+            var map = new google.maps.Map(mapDiv, {
+              center: {lat: <%= @room.latitude %>, lng: <%= @room.longitude %>},
+              zoom: 14
+            });
+
+            var marker = new google.maps.Marker({
+		        	position: new google.maps.LatLng(<%= @room.latitude %>, <%= @room.longitude %>),
+		        	title: "AirAlien"
+		        });
+
+            marker.setMap(map);
+          }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+            async defer></script>
 
 	</div>
 </div>
