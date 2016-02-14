@@ -7,3 +7,19 @@
 	<br>
 	<%= f.submit "Book Now", class: "btn btn-primary" %>
 <% end %>
+
+<script>
+/* 下記の #reservation_start_dateはテキストフィールド:start_dateが
+    HTML出力された時のid要素。この部分を操作するという意味。*/
+
+	$(function() {
+
+		$('#reservation_start_date').datepicker({
+			dateFormat: 'dd-mm-yy'
+		});
+		$('#reservation_end_date').datepicker({
+			dateFormat: 'dd-mm-yy'
+		});
+
+	});
+</script>
